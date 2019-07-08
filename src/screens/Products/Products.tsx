@@ -14,9 +14,12 @@ import { observer, inject } from "mobx-react"
 
 
 interface Props {
-    Product: Product
+    Product: Product,
+
 }
- @observer
+
+
+@inject('Product') @observer
 export  default  class Products extends PureComponent<Props> {
     
     componentDidMount(): void {

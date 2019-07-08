@@ -1,15 +1,15 @@
 import { observable, action } from "mobx";
-import { productInnerObj } from '../models/product'
+import { ProductModel } from '../models/product'
 
 export default class Product {
     @observable public loading: boolean = false;
     @observable public loaded: boolean = false;
-    @observable public result: Array<{catName: string, data: Array<productInnerObj>}> | null = [];
+    @observable public result: Array<ProductModel> | null = [];
 
 
 
     @action
-    loadSuccess = (result:Array<{catName: string, data: Array<productInnerObj>}> | null  ) => {
+    loadSuccess = (result:Array<ProductModel> | null  ) => {
         this.loading = false;
         this.loaded = true;
         this.result = result
